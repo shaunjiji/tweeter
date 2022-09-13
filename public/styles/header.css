@@ -1,0 +1,30 @@
+header {
+  display: flex;
+  height: 520px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+ 
+  background-color: orange;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+#maincontainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+  /* margin-bottom: 100px;  */
+  
+  
+}
+
+header  img {   /*use this notation when img is not a direct child, use > when its a direct child*/
+
+/* object-fit: scale-down; */
+width: 180px;
+}
+
+header  h2 {
+  font-family: 'Source Sans Pro';
+  color: #FFFFFF;
+  margin: 0;
+}
