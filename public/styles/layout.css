@@ -19,6 +19,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  padding-bottom: 30px; /* so there is a bit of space below tweet container */
 }
 
 main {
@@ -26,17 +27,42 @@ main {
   margin-left: 5%;
   margin-right: 5%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse; /*reversed so new tweet is on top of page */
   justify-content: center;
   align-items: center;
   background-color: #f4f1ec;
 }
 
-.counterRed {
+ .tweetcontainer{
+  border: 4px;
+  border-style: solid;
+  width: 100%;
+  height: 200px;
+  padding: 25px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+}
+
+.tweetcontainer:hover {
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+}
+ .tweetheader  {
   display: flex;
-  justify-content: flex-end;
-  font-family: 'Bungee';
-  float: right;
+  justify-content: space-between;
+
+ }
+ main p {
+  border-bottom: 3px;
+  border-bottom-style: solid;
+  padding: 25px;
+ }
+ .tweetfooter {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+ }
+ i:hover {
   color: red;
 }
 
