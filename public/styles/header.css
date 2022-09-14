@@ -14,9 +14,9 @@ header {
   flex-direction: column;
   padding-top: 55px;
   /* margin-bottom: 100px;  */
-  
-  
 }
+
+
 
 header  img {   /*use this notation when img is not a direct child, use > when its a direct child*/
 width: 180px;
