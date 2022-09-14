@@ -2,8 +2,6 @@
   width: 100%;
 }
 
-
-
 main button {
   background-color: #4056A1;
   font-family: 'Bungee';
@@ -20,10 +18,14 @@ form textarea {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-
 .counter {
   display: flex;
   justify-content: flex-end;
   font-family: 'Bungee';
   float: right;
 }
+
+.counterRed {
+  color: red;
+}
+

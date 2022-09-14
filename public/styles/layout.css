@@ -32,6 +32,13 @@ main {
   background-color: #f4f1ec;
 }
 
+.counterRed {
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Bungee';
+  float: right;
+  color: red;
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
