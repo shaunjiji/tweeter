@@ -7,7 +7,6 @@
 // const { render } = require("express/lib/response");
 
 
-
 const renderTweets = function (tweets) {
   for (let tweet of tweets) {
     const $element = createTweetElement(tweet);
@@ -17,7 +16,17 @@ const renderTweets = function (tweets) {
 }
 
 
+
+
 const createTweetElement = function (tweetData) {
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
+
   const $tweet = $(`
 
 <article>
@@ -29,7 +38,7 @@ const createTweetElement = function (tweetData) {
 <span>${tweetData.user.handle}</span>
 </div>
 
-<p>${tweetData.content.text}</p>
+<p>${escape(tweetData.content.text)}</p>
 
 <footer class="tweetfooter">
 <span> ${timeago.format(tweetData.created_at)}</span>
@@ -56,6 +65,8 @@ $(document).ready(function () {
 $('.formElement').on("submit", onSubmit);
 
 loadTweets();
+
+
 
 
 });
