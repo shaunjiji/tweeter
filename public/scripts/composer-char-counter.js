@@ -22,7 +22,6 @@ counter.text(charsLeft);
 });
 });
 
-//<output name="counter" class="counter" for="tweet-text">140</output>
-//target output
+
 
 
