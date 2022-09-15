@@ -11,7 +11,7 @@
 const renderTweets = function (tweets) {
   for (let tweet of tweets) {
     const $element = createTweetElement(tweet);
-    $('.tweetcontainer').append($element);
+    $('.tweetcontainer').prepend($element);
   }
   return;
 }
@@ -58,15 +58,24 @@ $('.formElement').on("submit", onSubmit);
 loadTweets();
 
 
-
 });
 
 const onSubmit = function (event) {
   event.preventDefault();
 
-  let data = $(this).serialize();
-  $.ajax({ url: '/tweets', method: 'POST', data: data });
-  loadTweets();
+  let data = $(this).serialize();  
+  let dataLength = data.replace("text=", "").length;
+ 
+  if (data !== "text=" && dataLength <= 140) {
+  $.ajax({ url: '/tweets', method: 'POST', data: data })
+  .then (()=> {  
+ loadTweets();
+   })
+ 
+  }
+  else {
+    alert("Invalid character count");
+  }
 
 }
 
@@ -83,5 +92,6 @@ const loadTweets = function() {
   }
   )
 }
+
 
 
