@@ -73,20 +73,38 @@ loadTweets();
 
 const onSubmit = function (event) {
   event.preventDefault();
-
+ 
   let data = $(this).serialize();  
   let dataLength = data.replace("text=", "").length;
+  const alertRed = $("#alertRed");
  
-  if (data !== "text=" && dataLength <= 140) {
+  if (dataLength !== 0 && dataLength <= 140) {
+  alertRed.slideUp();
   $.ajax({ url: '/tweets', method: 'POST', data: data })
   .then (()=> {  
  loadTweets();
    })
- 
+  }
+  else if (dataLength === 0) {
+    console.log("Test1");
+    errorMsg = "Please enter a proper tweet";
+    alertRed.text(errorMsg);
+    alertRed.slideDown();
+   
+  }
+  else if (dataLength > 140){
+   errorMsg = "Character limit is 140.";
+   alertRed.text(errorMsg);
+   alertRed.slideDown();
+   
   }
   else {
-    alert("Invalid character count");
+    alertRed.slideUp();
   }
+  
+  // else {
+  //   alert("Invalid character count");
+  // }
 
 }
 

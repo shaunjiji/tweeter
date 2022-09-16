@@ -30,3 +30,10 @@ form textarea {
   color: red;
 }
 
+.alertRed {
+  width: 40%;
+  border: 4px;
+  border-style: solid;
+  background-color: red;
+  
+}

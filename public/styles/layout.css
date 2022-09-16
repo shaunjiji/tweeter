@@ -73,6 +73,15 @@ main {
   color: red;
 }
 
+#alertRed {
+  display: none;
+  border: 4px;
+  border-style: solid;
+  background-color: red;
+  text-align: center;
+  
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
