@@ -17,6 +17,7 @@ form textarea {
   background-color: #f4f1ec;
   border-width: thick;
   font-family: 'Source Sans Pro', sans-serif;
+  
 }
 
 .counter {
@@ -30,10 +31,3 @@ form textarea {
   color: red;
 }
 
-.alertRed {
-  width: 40%;
-  border: 4px;
-  border-style: solid;
-  background-color: red;
-  
-}

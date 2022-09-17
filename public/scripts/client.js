@@ -4,7 +4,6 @@
 //  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 //  */
 
-// const { render } = require("express/lib/response");
 
 
 const renderTweets = function (tweets) {
@@ -96,15 +95,10 @@ const onSubmit = function (event) {
    errorMsg = "Character limit is 140.";
    alertRed.text(errorMsg);
    alertRed.slideDown();
-   
   }
   else {
     alertRed.slideUp();
   }
-  
-  // else {
-  //   alert("Invalid character count");
-  // }
 
 }
 
