@@ -1,4 +1,5 @@
 
+//This function is responsible for taking in an array of tweets and then appending each one to the .tweetcontainer
 const renderTweets = function (tweets) {
   for (let tweet of tweets) {
     const $element = createTweetElement(tweet);
@@ -8,7 +9,7 @@ const renderTweets = function (tweets) {
 }
 
 
-
+//This function takes in an object and posts the tweet with necessary info into our html page. 
 
 const createTweetElement = function (tweetData) {
 
@@ -62,6 +63,7 @@ $(document).ready(function () {
 
 
 });
+
 
 const onSubmit = function (event) {
   event.preventDefault();

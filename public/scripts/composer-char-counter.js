@@ -12,6 +12,7 @@ $(document).ready(function () {
       let totalChars = 140;
       let charsLeft = totalChars - currentCount;
       counter.text(charsLeft);
+      //if character limit is not followed, the form character count turns red
       if (charsLeft < 0) {
          $(".counter").addClass("counterRed");
       }
