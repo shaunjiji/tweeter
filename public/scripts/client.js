@@ -1,10 +1,3 @@
-// /*
-//  * Client-side JS logic goes here
-//  * jQuery is already loaded
-//  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
-//  */
-
-
 
 const renderTweets = function (tweets) {
   for (let tweet of tweets) {
@@ -50,7 +43,7 @@ const createTweetElement = function (tweetData) {
 </article>
 <br>
 `);
-
+  $('.formElement')[0].reset();
   return $tweet;
 }
 
