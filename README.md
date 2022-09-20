@@ -21,3 +21,13 @@ This repository is the starter code for the project: Students will fork and clon
 - Md5
 - Nodemon
 
+## Screenshots
+
+### Mobile View
+!["Mobile View"](https://github.com/shaunjiji/tweeter/blob/master/docs/mobile%20view.png)
+
+### Desktop View
+!["Desktop View"](https://github.com/shaunjiji/tweeter/blob/master/docs/desktop%20view.png)
+
+
+
