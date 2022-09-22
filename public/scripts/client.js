@@ -9,19 +9,17 @@ const renderTweets = function (tweets) {
   return;
 }
 
-
 //This function takes in an object and posts the tweet with necessary info into our html page. 
-
 const createTweetElement = function (tweetData) {
 
-  const escape = function (str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
+const escape = function (str) {
+let div = document.createElement("div");
+div.appendChild(document.createTextNode(str));
+return div.innerHTML;
+};
 
 
-  const $tweet = $(`
+const $tweet = $(`
 
 <article>
 <div class="tweetheader">
@@ -51,9 +49,9 @@ const createTweetElement = function (tweetData) {
 $(document).ready(function () {
 
 
-  $('.formElement').on("submit", onSubmit);
+$('.formElement').on("submit", onSubmit);
 
-  loadTweets();
+loadTweets();
 
 
 
