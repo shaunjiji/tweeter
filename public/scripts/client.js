@@ -1,6 +1,7 @@
 
 //This function is responsible for taking in an array of tweets and then appending each one to the .tweetcontainer
 const renderTweets = function (tweets) {
+  $('.tweetcontainer').empty();
   for (let tweet of tweets) {
     const $element = createTweetElement(tweet);
     $('.tweetcontainer').prepend($element);
@@ -44,13 +45,8 @@ const createTweetElement = function (tweetData) {
 </article>
 <br>
 `);
-  $('.formElement')[0].reset();
   return $tweet;
 }
-
-
-
-
 
 $(document).ready(function () {
 
@@ -68,37 +64,31 @@ $(document).ready(function () {
 const onSubmit = function (event) {
   event.preventDefault();
 
-  let data = $(this).serialize();
-  let dataLength = data.replace("text=", "").length;
+  const dataLength = $("#tweet-text").val().length;
   const alertRed = $("#alertRed");
 
-  if (dataLength !== 0 && dataLength <= 140) {
-    alertRed.slideUp();
-    $.ajax({ url: '/tweets', method: 'POST', data: data })
-      .then(() => {
-        loadTweets();
-      })
-  }
-  else if (dataLength === 0) {
-    console.log("Test1");
+  if (dataLength === 0) {
     errorMsg = "Please enter a proper tweet";
     alertRed.text(errorMsg);
     alertRed.slideDown();
-
+    return;
   }
-  else if (dataLength > 140) {
+
+  if (dataLength > 140) {
     errorMsg = "Character limit is 140.";
     alertRed.text(errorMsg);
     alertRed.slideDown();
-  }
-  else {
-    alertRed.slideUp();
+    return;
   }
 
+  let data = $(this).serialize();
+
+  alertRed.slideUp();
+  $.ajax({ url: '/tweets', method: 'POST', data: data })
+    .then(() => loadTweets())
+    .then(() => $('.formElement')[0].reset())
+    .then(() => $(".counter").text(140))
 }
-
-
-
 
 const loadTweets = function () {
   $.ajax({
